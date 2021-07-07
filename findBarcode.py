@@ -43,11 +43,10 @@ while True:
             userWebsocket = decodedBarcode['id']
             time.sleep(1.5)
 
-
         else:
 
             if userWebsocket is None:
-                print("please login before")
+                print("[INFO] Please login")
 
             elif previousBarcodeRead is None:
                 previousBarcodeRead = barcodeData
@@ -68,8 +67,6 @@ while True:
     cv2.imshow("barcode ", frame)
 
     key = cv2.waitKey(1) & 0xFF
-    if key == ord("q"):
-        break
+    if key == ord("r"):
+        userWebsocket = None
 vs.stop()
-# p = vlc.MediaPlayer("/home/pi/Desktop/findBarcode/ceva.mp3")
-# p.play()
